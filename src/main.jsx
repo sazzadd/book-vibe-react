@@ -1,6 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ListedBook from "./components/ListedBook";
+import BookDetails from "./components/Root/BookDetails";
 import Dashboard from "./components/Root/Dashboard";
 import ErrorPage from "./components/Root/ErrorPage";
 import Home from "./components/Root/Home";
@@ -15,6 +17,16 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "books/:bookId",
+        element: <BookDetails></BookDetails>,
+        loader: () => fetch("/booksData.json"),
+      },
+      {
+        path: "/listedBook",
+        element: <ListedBook></ListedBook>,
+        loader: () => fetch("/booksData.json"),
       },
       {
         path: "/dashboard",

@@ -10,7 +10,7 @@ const Banner = () => {
             className="max-w-sm "
           />
           <div>
-            <h1 className="text-5xl font-bold">
+            <h1 className="text-5xl font-bold play-font">
               Books to freshen up your bookshelf
             </h1>
 
